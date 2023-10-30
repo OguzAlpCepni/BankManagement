@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/BankManagement.iml" filepath="$PROJECT_DIR$/.idea/BankManagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Banking-Api-Gateway/Banking-Api-Gateway.iml" filepath="$PROJECT_DIR$/Banking-Api-Gateway/Banking-Api-Gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Banking-Core-Service-Registry/Banking-Core-Service-Registry.iml" filepath="$PROJECT_DIR$/Banking-Core-Service-Registry/Banking-Core-Service-Registry.iml" />
+    </modules>
+  </component>
+</project>
