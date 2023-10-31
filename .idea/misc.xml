@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/Banking-Core-Service-Registry/pom.xml" />
         <option value="$PROJECT_DIR$/Banking-Api-Gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/Banking-User-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/Banking-Fund-Transfer-Service/pom.xml" />
       </list>
     </option>
   </component>
