@@ -1,10 +1,15 @@
-package com.Bank.BankingFundTransferService.Model.Dto;
+package com.Bank.BankingFundTransferService.Business.response;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+
 @Data
-public class FundTransferDto {
+@AllArgsConstructor
+@NoArgsConstructor
+public class GetAllFundTransferResponses {
     private Long id;
     private String transactionReference;
     private String status;
