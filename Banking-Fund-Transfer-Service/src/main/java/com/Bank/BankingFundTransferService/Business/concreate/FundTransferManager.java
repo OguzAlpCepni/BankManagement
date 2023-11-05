@@ -6,10 +6,13 @@ import com.Bank.BankingFundTransferService.Business.response.FundTransferRespons
 import com.Bank.BankingFundTransferService.Business.response.GetAllFundTransferResponses;
 import com.Bank.BankingFundTransferService.Core.mappers.ModelMapperService;
 import com.Bank.BankingFundTransferService.DataAccess.FundTransferRepository;
+import com.Bank.BankingFundTransferService.Model.Entity.FundTransferEntity;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
 @AllArgsConstructor
 @Service
 public class FundTransferManager implements FundTransferService {
@@ -18,7 +21,9 @@ public class FundTransferManager implements FundTransferService {
     private ModelMapperService modelMapperService;
     @Override
     public List<GetAllFundTransferResponses> getAllTransfers() {
-        return null;
+        List<FundTransferEntity> fundTransferEntities = fundTransferRepository.findAll();
+        List<GetAllFundTransferResponses> getAllFundTransferResponses = fundTransferEntities.stream().map(fundTransferEntity->this.modelMapperService.forResponse().map(fundTransferEntity, GetAllFundTransferResponses.class)).collect(Collectors.toList());
+    return getAllFundTransferResponses;
     }
 
     @Override
