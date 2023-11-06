@@ -22,8 +22,9 @@ public class FundTransferManager implements FundTransferService {
     @Override
     public List<GetAllFundTransferResponses> getAllTransfers() {
         List<FundTransferEntity> fundTransferEntities = fundTransferRepository.findAll();
-        List<GetAllFundTransferResponses> getAllFundTransferResponses = fundTransferEntities.stream().map(fundTransferEntity->this.modelMapperService.forResponse().map(fundTransferEntity, GetAllFundTransferResponses.class)).collect(Collectors.toList());
-    return getAllFundTransferResponses;
+        return fundTransferEntities.stream()
+                .map(fundtransferEntity->this.modelMapperService.forResponse().map(fundtransferEntity, GetAllFundTransferResponses.class)).collect(Collectors.toList());
+
     }
 
     @Override
