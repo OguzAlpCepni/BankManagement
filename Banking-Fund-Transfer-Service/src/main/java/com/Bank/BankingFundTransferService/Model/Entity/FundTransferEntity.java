@@ -1,10 +1,12 @@
 package com.Bank.BankingFundTransferService.Model.Entity;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
+
 
 import java.math.BigDecimal;
 @Data

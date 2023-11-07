@@ -6,7 +6,7 @@ import com.Bank.BankingFundTransferService.Core.exceptions.ValidationProblemDeta
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.HashMap;
 
 @SpringBootApplication
-@EnableEurekaServer
 @RestControllerAdvice
+@EnableDiscoveryClient
 public class BankingFundTransferServiceApplication {
 
 	public static void main(String[] args) {
