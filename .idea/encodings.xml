@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Banking-Api-Gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Banking-Api-Gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Banking-Bank-Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Banking-Bank-Service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Banking-Core-Service-Registry/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Banking-Fund-Transfer-Service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Banking-Fund-Transfer-Service/src/main/resources" charset="UTF-8" />
