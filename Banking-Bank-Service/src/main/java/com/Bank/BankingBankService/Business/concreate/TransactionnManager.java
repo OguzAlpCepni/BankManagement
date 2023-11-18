@@ -24,11 +24,11 @@ import java.util.UUID;
 @Service
 @AllArgsConstructor
 @Transactional
-public class TransactionManager implements TransactionService {
-    private final TransactionRepository transactionRepository;
-    private final BankAccountsRepository bankAccountsRepository;
-    private final BankAccountService bankAccountService;
-    private final Helper helper;
+public class TransactionnManager implements TransactionService {
+    private TransactionRepository transactionRepository;
+    private BankAccountsRepository bankAccountsRepository;
+    private BankAccountService bankAccountService;
+    private Helper helper;
 
     @Override//// Method to manage fund transfer operations
     public FundTransferResponse fundTransfer(FundtTransferRequest fundtTransferRequest) {

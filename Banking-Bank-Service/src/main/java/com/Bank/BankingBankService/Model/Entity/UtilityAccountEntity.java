@@ -20,6 +20,6 @@ public class UtilityAccountEntity {
     private String number;
 
     @Column(name = "provider_name")
-    private String provşdeName;
+    private String providerName;
 
 }

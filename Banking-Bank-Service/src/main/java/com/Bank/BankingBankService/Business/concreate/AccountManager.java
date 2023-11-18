@@ -17,9 +17,9 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class AccountManager implements BankAccountService {
-    private  final BankAccountsRepository bankAccountsRepository;
-    private final ModelMapperService modelMapperService;
-    private final UtilityAccountRepository utilityAccountRepository;
+    private  BankAccountsRepository bankAccountsRepository;
+    private  ModelMapperService modelMapperService;
+    private  UtilityAccountRepository utilityAccountRepository;
     
     @Override
     public BankAccount readBankAccount(String accountNumber) {
