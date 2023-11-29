@@ -20,7 +20,7 @@ public class UserConstoller {
     public ResponseEntity readUser(@PathVariable("identification") String identification) {
         return ResponseEntity.ok(userService.readUser(identification));
     }
-    @GetMapping
+    @GetMapping 
     public ResponseEntity readUsers() {
         return ResponseEntity.ok(userService.readUsers());
     }
