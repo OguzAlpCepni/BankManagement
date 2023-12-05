@@ -1,10 +1,10 @@
-package com.Bank.BankingUserService.business.dto;
+package com.Bank.BankingUserService.business.dto.responses;
 
 import com.Bank.BankingUserService.model.Enum.Status;
 import lombok.Data;
 
 @Data
-public class User {
+public class GetByIdUserResponse {
     private long id;
     private String email;
     private String identification;

@@ -17,9 +17,6 @@ public class UserEntity {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "auth_id")
-    private String authId;
-
     @Column(name = "identification")
     private String identification;
 
