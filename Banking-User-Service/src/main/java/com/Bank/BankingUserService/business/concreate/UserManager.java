@@ -17,10 +17,8 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 public class UserManager implements UserService {
-
     private UserRepository userRepository;
     private ModelMapperService modelMapperService;
-
     @Override
     public List<GetAllUserResponse> getAll() {
         List<UserEntity> userEntities = userRepository.findAll();
