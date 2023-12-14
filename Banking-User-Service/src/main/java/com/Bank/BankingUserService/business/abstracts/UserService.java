@@ -11,7 +11,7 @@ import java.util.List;
 public interface UserService {
     List<GetAllUserResponse> getAll();
     GetByIdUserResponse getById(long id);
-    void add(CreateUserRequest createUserRequest);
+    CreateUserRequest add(CreateUserRequest createUserRequest);
 
     void update(UpdateUserRequest updateUserRequest);
     void delete(long id);

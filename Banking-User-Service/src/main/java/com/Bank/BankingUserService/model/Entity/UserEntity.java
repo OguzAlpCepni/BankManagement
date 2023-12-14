@@ -16,10 +16,12 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
-
+    @Column(name = "email")
+    private String email;
     @Column(name = "identification")
     private String identification;
-
+    @Column(name = "password")
+    private String password;
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private Status status;
