@@ -2,6 +2,7 @@ package com.Bank.BankingBankService.Model.Entity;
 
 import com.Bank.BankingBankService.Model.Enum.AccountStatus;
 import com.Bank.BankingBankService.Model.Enum.AccountType;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 

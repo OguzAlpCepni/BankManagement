@@ -1,5 +1,6 @@
 package com.Bank.BankingBankService.Model.Entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,6 +29,6 @@ public class UserEntity {
     private String email;
     @Column(name ="identifaciton_number")
     private String identificationNumber;
-    @OneToMany(mappedBy = "user",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user")
     private List<BankAccountEntity> accounts;
 }

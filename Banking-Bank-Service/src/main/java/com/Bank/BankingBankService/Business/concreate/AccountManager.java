@@ -1,7 +1,6 @@
 package com.Bank.BankingBankService.Business.concreate;
 
 import com.Bank.BankingBankService.Business.Dto.BankAccount;
-import com.Bank.BankingBankService.Business.Dto.User;
 import com.Bank.BankingBankService.Business.Dto.UtilityAccount;
 import com.Bank.BankingBankService.Business.abstracts.BankAccountService;
 import com.Bank.BankingBankService.Core.exceptions.EntityNotFoundException;
@@ -9,7 +8,6 @@ import com.Bank.BankingBankService.Core.mapper.ModelMapperService;
 import com.Bank.BankingBankService.DataAccess.BankAccountsRepository;
 import com.Bank.BankingBankService.DataAccess.UtilityAccountRepository;
 import com.Bank.BankingBankService.Model.Entity.BankAccountEntity;
-import com.Bank.BankingBankService.Model.Entity.UserEntity;
 import com.Bank.BankingBankService.Model.Entity.UtilityAccountEntity;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
