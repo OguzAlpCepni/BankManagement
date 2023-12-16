@@ -2,6 +2,7 @@ package com.Bank.BankingUserService.business.concreate;
 
 import com.Bank.BankingUserService.business.Rules.UserBusinessRules;
 import com.Bank.BankingUserService.business.abstracts.UserService;
+import com.Bank.BankingUserService.business.dto.User;
 import com.Bank.BankingUserService.business.dto.UserResponse;
 import com.Bank.BankingUserService.business.dto.requests.CreateUserRequest;
 import com.Bank.BankingUserService.business.dto.requests.UpdateUserRequest;
@@ -46,8 +47,8 @@ public class UserManager implements UserService {
     @Override
     public CreateUserRequest add(CreateUserRequest createUserRequest) {
         userBusinessRules.checkIfUserMailExists(createUserRequest.getEmail());
-        UserResponse userResponse = bankingCoreRestClient.readUser(createUserRequest.getIdentification());
-        userBusinessRules.emailValidation(userResponse,createUserRequest);
+        User user = bankingCoreRestClient.readUser(createUserRequest.getIdentification());
+        userBusinessRules.emailValidation(user,createUserRequest);
         UserEntity userEntity = this.modelMapperService.forRequest().map(createUserRequest,UserEntity.class);
         userEntity.setStatus(Status.PENDING);
         this.userRepository.save(userEntity);
@@ -55,11 +56,7 @@ public class UserManager implements UserService {
         return createUserRequest1;
     }
 
-    @Override
-    public void update(UpdateUserRequest updateUserRequest) {
-        UserEntity userEntity = this.modelMapperService.forRequest().map(updateUserRequest,UserEntity.class);
-        this.userRepository.save(userEntity);
-    }
+
 
     @Override
     public void delete(long id) {

@@ -10,6 +10,13 @@ spring:
             - Path=/bank/**
           filters:
             - StripPrefix=1
+        - id: Banking-User-Service
+          uri: lb://Banking-User-Service
+          predicates:
+            - Path=/user/**
+          filters:
+            - StripPrefix=1
+
 server:
   port: 8082
 eureka:

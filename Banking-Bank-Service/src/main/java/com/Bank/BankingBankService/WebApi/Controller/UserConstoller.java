@@ -1,5 +1,6 @@
 package com.Bank.BankingBankService.WebApi.Controller;
 
+import com.Bank.BankingBankService.Business.Dto.User;
 import com.Bank.BankingBankService.Business.abstracts.UserService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,8 +18,8 @@ public class UserConstoller {
     private final UserService userService;
     private final MessageSource messageSource;
     @GetMapping(value = "/{identification}")
-    public ResponseEntity readUser(@PathVariable("identification") String identification) {
-        return ResponseEntity.ok(userService.readUser(identification));
+    public User readUser(@PathVariable("identification") String identification) {
+        return userService.readUser(identification);
     }
     @GetMapping
     public ResponseEntity readUsers() {

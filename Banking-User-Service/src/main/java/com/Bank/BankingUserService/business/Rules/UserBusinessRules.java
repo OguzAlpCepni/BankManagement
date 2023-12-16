@@ -1,5 +1,6 @@
 package com.Bank.BankingUserService.business.Rules;
 
+import com.Bank.BankingUserService.business.dto.User;
 import com.Bank.BankingUserService.business.dto.UserResponse;
 import com.Bank.BankingUserService.business.dto.requests.CreateUserRequest;
 import com.Bank.BankingUserService.core.mapper.Exceptions.BusinessException;
@@ -20,8 +21,8 @@ public class UserBusinessRules {
             throw new BusinessException("This email is already registered. Please check and retry.");
         }
     }
-    public void emailValidation(UserResponse userResponse, CreateUserRequest createUserRequest){
-        if(!userResponse.getEmail().equals(createUserRequest.getEmail())){
+    public void emailValidation(User user, CreateUserRequest createUserRequest){
+        if(!user.getEmail().equals(createUserRequest.getEmail())){
             throw new BusinessException("Incorrect email. Please check and retry.");
         }
     }

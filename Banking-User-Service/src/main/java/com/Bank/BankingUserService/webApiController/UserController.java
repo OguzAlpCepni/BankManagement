@@ -25,15 +25,12 @@ public class UserController {
     public GetByIdUserResponse getById(@PathVariable long id){
         return this.userService.getById(id);
     }
-    @PutMapping()
+    @PostMapping()
     @ResponseStatus(code= HttpStatus.CREATED)
     public void add(@RequestBody CreateUserRequest createUserRequest){
         this.userService.add(createUserRequest);
     }
-    @PutMapping()
-    public void update(@RequestBody UpdateUserRequest updateUserRequest){
-        this.userService.update(updateUserRequest);
-    }
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable long id){
         this.userService.delete(id);
