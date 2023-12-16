@@ -12,6 +12,7 @@
         <module name="Banking-Core-Service-Registry" />
         <module name="Banking-Fund-Transfer-Service" />
         <module name="Banking-Bank-Service" />
+        <module name="Banking-Utility-Payment-Service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,6 +21,7 @@
       <module name="Banking-Core-Service-Registry" target="17" />
       <module name="Banking-Fund-Transfer-Service" target="17" />
       <module name="Banking-User-Service" target="17" />
+      <module name="Banking-Utility-Payment-Service" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -29,6 +31,7 @@
       <module name="Banking-Core-Service-Registry" options="-parameters" />
       <module name="Banking-Fund-Transfer-Service" options="-parameters" />
       <module name="Banking-User-Service" options="-parameters" />
+      <module name="Banking-Utility-Payment-Service" options="-parameters" />
     </option>
   </component>
 </project>
