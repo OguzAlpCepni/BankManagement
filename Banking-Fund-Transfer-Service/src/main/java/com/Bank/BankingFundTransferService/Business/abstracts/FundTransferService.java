@@ -1,8 +1,8 @@
 package com.Bank.BankingFundTransferService.Business.abstracts;
 
-import com.Bank.BankingFundTransferService.Business.request.FundTransferRequest;
-import com.Bank.BankingFundTransferService.Business.response.FundTransferResponse;
-import com.Bank.BankingFundTransferService.Business.response.GetAllFundTransferResponses;
+import com.Bank.BankingFundTransferService.Business.DTO.request.FundTransferRequest;
+import com.Bank.BankingFundTransferService.Business.DTO.response.FundTransferResponse;
+import com.Bank.BankingFundTransferService.Business.DTO.response.GetAllFundTransferResponses;
 
 import java.util.List;
 

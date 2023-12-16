@@ -1,5 +1,7 @@
 package com.Bank.BankingBankService.WebApi.Controller;
 
+import com.Bank.BankingBankService.Business.Dto.BankAccount;
+import com.Bank.BankingBankService.Business.Dto.UtilityAccount;
 import com.Bank.BankingBankService.Business.abstracts.BankAccountService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,13 +19,11 @@ public class AccountController {
     private final BankAccountService bankAccountService;
 
     @GetMapping("/bank-account/{account_number}")
-    public ResponseEntity getBankAccount(@PathVariable("account_number")String accountNumber){
-        log.info("Reading account by ID {}", accountNumber);
-        return ResponseEntity.ok(bankAccountService.readBankAccount(accountNumber));
+    public BankAccount getBankAccount(@PathVariable("account_number")String accountNumber){
+        return bankAccountService.readBankAccount(accountNumber);
     }
     @GetMapping("/util-account/{account_name}")
-    public ResponseEntity getUtilityAccount(@PathVariable("account_name") String providerName) {
-        log.info("Reading utitlity account by ID {}", providerName);
-        return ResponseEntity.ok(bankAccountService.readUtilityAccount(providerName));
+    public UtilityAccount getUtilityAccount(@PathVariable("account_name") String providerName) {
+        return bankAccountService.readUtilityAccount(providerName);
     }
 }

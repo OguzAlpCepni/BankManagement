@@ -1,18 +1,17 @@
 package com.Bank.BankingFundTransferService.Model.Entity;
 
 
+import com.Bank.BankingFundTransferService.Model.Enum.TransactionStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.resource.transaction.spi.TransactionStatus;
-
+import lombok.*;
 
 import java.math.BigDecimal;
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Getter
+@Setter
 @Table(name="fund_transfer")
 public class FundTransferEntity {
     @Id

@@ -25,4 +25,12 @@ public class ModelMapperManager implements ModelMapperService{
         return this.modelMapper;
 
     }
+    @Override
+    public ModelMapper forRequestLoose() {
+        this.modelMapper.getConfiguration()
+                .setAmbiguityIgnored(true)
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        return this.modelMapper;
+
+    }
 }

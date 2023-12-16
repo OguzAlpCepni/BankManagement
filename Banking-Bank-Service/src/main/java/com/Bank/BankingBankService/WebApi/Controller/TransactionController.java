@@ -2,6 +2,7 @@ package com.Bank.BankingBankService.WebApi.Controller;
 
 import com.Bank.BankingBankService.Business.Dto.Request.FundtTransferRequest;
 import com.Bank.BankingBankService.Business.Dto.Request.UtilityPaymentRequest;
+import com.Bank.BankingBankService.Business.Dto.Response.FundTransferResponse;
 import com.Bank.BankingBankService.Business.abstracts.TransactionService;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -19,10 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class TransactionController {
     private final TransactionService transactionService;
     @PostMapping("/fund-transfer")
-    public ResponseEntity fundTransfer(@RequestBody FundtTransferRequest fundTransferRequest) {
+    public FundTransferResponse fundTransfer(@RequestBody FundtTransferRequest fundTransferRequest) {
 
         log.info("Fund transfer initiated in core bank from {}", fundTransferRequest.toString());
-        return ResponseEntity.ok(transactionService.fundTransfer(fundTransferRequest));
+        return transactionService.fundTransfer(fundTransferRequest);
 
     }
     @PostMapping("/util-payment")

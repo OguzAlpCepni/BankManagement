@@ -16,6 +16,11 @@ spring:
             - Path=/user/**
           filters:
             - StripPrefix=1
+        - id: Banking-Fund-Transfer-Service
+          uri: lb://Banking-Fund-Transfer-Service
+          predicates:
+            - Path=/fund/**
+          filters:
 
 server:
   port: 8082

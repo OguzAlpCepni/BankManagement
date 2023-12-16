@@ -32,7 +32,7 @@ public class HelperMethodsManager implements Helper{
     public String internalFundTransfer(BankAccount fromBankAccount, BankAccount toBankAccount, BigDecimal amount) {
         // Create a unique transaction ID
         String transactionId = UUID.randomUUID().toString();
-
+        System.out.println(transactionId);
         // Receive sender and receiver bank account entities ( Gönderici ve alıcı banka hesap varlıklarını al)
         BankAccountEntity fromBankAccountEntity = bankAccountsRepository.findByNumber(fromBankAccount.getNumber()).orElseThrow(EntityNotFoundException::new);
         BankAccountEntity toBankAccountEntity = bankAccountsRepository.findByNumber(toBankAccount.getNumber()).orElseThrow(EntityNotFoundException::new);
@@ -43,14 +43,16 @@ public class HelperMethodsManager implements Helper{
         bankAccountsRepository.save(fromBankAccountEntity);
 
         // Save fund transfer transaction for sender( Gönderici için fon transferi işlemini kaydet)
-        transactionRepository.save(TransactionEntity.builder().transactionType(TransactionType.FUND_TRANSFER)
-                .referenceNumber(toBankAccountEntity.getNumber())
-                .transactionId(transactionId)
-                .account(fromBankAccountEntity).amount(amount.negate()).build());
+        transactionRepository.save(TransactionEntity.builder()  // TransactionEntity sınıfından bir nesne oluşturuluyor.
+                .transactionType(TransactionType.FUND_TRANSFER) // İşlemin türü belirleniyor (fon transferi).
+                .referenceNumber(toBankAccountEntity.getNumber())// Referans numarası olarak alıcı banka hesabının numarası belirleniyor.
+                .transactionId(transactionId)                   // İşlem ID'si olarak daha önce oluşturulan benzersiz bir ID atanıyor.
+                .account(fromBankAccountEntity)                 // İşlemi gerçekleştiren banka hesabı belirleniyor (gönderen hesap).
+                .amount(amount.negate()).build());              // TransactionEntity nesnesi oluşturulan yapı ile inşa ediliyor.
 
         //Update recipient account balance(Alıcı hesap bakiyesini güncelle)
-        toBankAccountEntity.setActualBalance(toBankAccountEntity.getActualBalance().add(amount));
-        toBankAccountEntity.setAvailableBalance(toBankAccountEntity.getActualBalance().add(amount));
+        toBankAccountEntity.setActualBalance(toBankAccountEntity.getActualBalance().add(amount));// Alıcı hesabın gerçek bakiyesine, gönderilen miktar eklenir.
+        toBankAccountEntity.setAvailableBalance(toBankAccountEntity.getActualBalance().add(amount));// Alıcı hesabın kullanılabilir bakiyesine, gönderilen miktar eklenir.
         bankAccountsRepository.save(toBankAccountEntity);
 
         // Save fund transfer transaction for the recipient (Alıcı için fon transferi işlemini kaydet)

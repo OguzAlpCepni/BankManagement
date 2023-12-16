@@ -1,4 +1,4 @@
-package com.Bank.BankingFundTransferService.Business.response;
+package com.Bank.BankingFundTransferService.Business.DTO.response;
 
 import lombok.Data;
 
