@@ -37,6 +37,7 @@ public class FundTransferManager implements FundTransferService {
         FundTransferEntity optFundTransfer = fundTransferRepository.save(fundTransferEntity);
 
         FundTransferResponse fundTransferResponse = bankingCoreFeignClient.fundTransfer(fundTransferRequest);
+
         optFundTransfer.setTransactionReference(fundTransferResponse.getTransactionId());
         optFundTransfer.setStatus(TransactionStatus.SUCCESS);
         fundTransferRepository.save(optFundTransfer);

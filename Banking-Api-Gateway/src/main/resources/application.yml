@@ -22,6 +22,12 @@ spring:
             - Path=/fund/**
           filters:
             - StripPrefix=1
+        - id: Banking-Utility-Payment-Service
+          uri: lb://Banking-Utility-Payment-Service
+          predicates:
+            - Path=/utilityPayment/**
+          filters:
+            - StripPrefix=1
 server:
   port: 8082
 eureka:

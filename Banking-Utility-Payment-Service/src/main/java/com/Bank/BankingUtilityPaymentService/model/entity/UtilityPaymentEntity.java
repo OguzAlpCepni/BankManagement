@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-
+@Entity
 @Data
 @Table(name="utility_payment")
 @AllArgsConstructor
@@ -15,9 +15,10 @@ import java.math.BigDecimal;
 public class UtilityPaymentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
-    @Column(name="provide_id")
-    private long provideId;
+    @Column(name="provider_id")
+    private long providerId;
     @Column(name="amount")
     private BigDecimal amount;
     @Column(name="reference_number")

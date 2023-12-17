@@ -21,14 +21,14 @@ public class AccountManager implements BankAccountService {
     
     @Override
     public BankAccount readBankAccount(String accountNumber) {
-        BankAccountEntity bankAccountEntity = bankAccountsRepository.findByNumber(accountNumber).orElseThrow(EntityNotFoundException::new);
+        BankAccountEntity bankAccountEntity = bankAccountsRepository.findByNumber(accountNumber);
         BankAccount bankAccount = this.modelMapperService.forResponse().map(bankAccountEntity, BankAccount.class);
         return bankAccount;
     }
 
     @Override
     public UtilityAccount readUtilityAccount(String provider) {
-        UtilityAccountEntity utilityAccountEntity = utilityAccountRepository.findByProviderName(provider).orElseThrow(EntityNotFoundException::new);
+        UtilityAccountEntity utilityAccountEntity = utilityAccountRepository.findByProviderName(provider);
         UtilityAccount utilityAccount = this.modelMapperService.forResponse().map(utilityAccountEntity,UtilityAccount.class);
         return utilityAccount;
     }

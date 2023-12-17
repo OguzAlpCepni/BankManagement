@@ -1,7 +1,6 @@
 package com.Bank.BankingBankService.Business.HelperMethods;
 
 import com.Bank.BankingBankService.Business.Dto.BankAccount;
-import com.Bank.BankingBankService.Core.exceptions.EntityNotFoundException;
 import com.Bank.BankingBankService.Core.exceptions.GlobalErrorCode;
 import com.Bank.BankingBankService.Core.exceptions.InsufficientFundsException;
 import com.Bank.BankingBankService.DataAccess.BankAccountsRepository;
@@ -34,8 +33,8 @@ public class HelperMethodsManager implements Helper{
         String transactionId = UUID.randomUUID().toString();
         System.out.println(transactionId);
         // Receive sender and receiver bank account entities ( Gönderici ve alıcı banka hesap varlıklarını al)
-        BankAccountEntity fromBankAccountEntity = bankAccountsRepository.findByNumber(fromBankAccount.getNumber()).orElseThrow(EntityNotFoundException::new);
-        BankAccountEntity toBankAccountEntity = bankAccountsRepository.findByNumber(toBankAccount.getNumber()).orElseThrow(EntityNotFoundException::new);
+        BankAccountEntity fromBankAccountEntity = bankAccountsRepository.findByNumber(fromBankAccount.getNumber());
+        BankAccountEntity toBankAccountEntity = bankAccountsRepository.findByNumber(toBankAccount.getNumber());
 
         // Update sender account balance after fund transfer( Fon transferinden sonra gönderici hesap bakiyesini güncelle)
         fromBankAccountEntity.setActualBalance(fromBankAccountEntity.getActualBalance().subtract(amount));

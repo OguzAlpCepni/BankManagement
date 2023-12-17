@@ -57,7 +57,7 @@ public class TransactionnManager implements TransactionService {
         // Hizmet sağlayıcının bilgilerini al
         UtilityAccount utilityAccount = bankAccountService.readUtilityAccount(utilityPaymentRequest.getProviderId());
         // Gönderen banka hesap varlığını al
-        BankAccountEntity fromAccount = bankAccountsRepository.findByNumber(fromBankAccount.getNumber()).get();
+        BankAccountEntity fromAccount = bankAccountsRepository.findByNumber(fromBankAccount.getNumber());
         // Hizmet ödemesinden sonra gönderen hesap bakiyesini güncelle
         fromAccount.setActualBalance(fromAccount.getActualBalance().subtract(utilityPaymentRequest.getAmount()));
         fromAccount.setAvailableBalance(fromAccount.getActualBalance().subtract(utilityPaymentRequest.getAmount()));
@@ -68,8 +68,8 @@ public class TransactionnManager implements TransactionService {
                 .referenceNumber(utilityPaymentRequest.getReferanceNumber())
                 .amount(utilityPaymentRequest.getAmount().negate()).build());
         // İşlem detayları içeren bir yanıt döndür
-        return UtilityPaymentResponse.builder().message("Hizmet ödemesi başarıyla tamamlandı")
-                .transactionId(transactionId).build();
+
+        return UtilityPaymentResponse.builder().message("Hizmet ödemesi başarıyla tamamlandı").transactionId(transactionId).build();
 
     }
 }

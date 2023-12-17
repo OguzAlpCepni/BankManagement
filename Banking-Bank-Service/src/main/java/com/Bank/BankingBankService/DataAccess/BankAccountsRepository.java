@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface BankAccountsRepository extends JpaRepository<BankAccountEntity,Long> {
-    Optional<BankAccountEntity> findByNumber(String accountNumber);
+    BankAccountEntity findByNumber(String accountNumber);
 }

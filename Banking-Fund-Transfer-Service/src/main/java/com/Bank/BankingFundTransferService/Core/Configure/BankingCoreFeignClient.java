@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.*;
 @FeignClient(name ="Banking-Api-Gateway")
 public interface BankingCoreFeignClient {
     @GetMapping(value="bank/api/account/bank-account/{account_number}")
-    public BankAccount getBankAccount(@PathVariable("account_number") String accountNumber);
+    BankAccount getBankAccount(@PathVariable("account_number") String accountNumber);
 
     @GetMapping(value="bank/api/transaction/fund-transfer")
-    public FundTransferResponse fundTransfer(@RequestBody FundTransferRequest fundTransferRequest);
+    FundTransferResponse fundTransfer(@RequestBody FundTransferRequest fundTransferRequest);
     //  önemli bu method bize bir mesaj ve transactionId döndürecek
 
 }

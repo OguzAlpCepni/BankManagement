@@ -3,6 +3,7 @@ package com.Bank.BankingBankService.WebApi.Controller;
 import com.Bank.BankingBankService.Business.Dto.Request.FundtTransferRequest;
 import com.Bank.BankingBankService.Business.Dto.Request.UtilityPaymentRequest;
 import com.Bank.BankingBankService.Business.Dto.Response.FundTransferResponse;
+import com.Bank.BankingBankService.Business.Dto.Response.UtilityPaymentResponse;
 import com.Bank.BankingBankService.Business.abstracts.TransactionService;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -27,10 +28,8 @@ public class TransactionController {
 
     }
     @PostMapping("/util-payment")
-    public ResponseEntity utilPayment(@RequestBody UtilityPaymentRequest utilityPaymentRequest) {
-
-        log.info("Utility Payment initiated in core bank from {}", utilityPaymentRequest.toString());
-        return ResponseEntity.ok(transactionService.utilPayment(utilityPaymentRequest));
+    public UtilityPaymentResponse utilPayment(@RequestBody UtilityPaymentRequest utilityPaymentRequest) {
+        return transactionService.utilPayment(utilityPaymentRequest);
 
     }
 }
