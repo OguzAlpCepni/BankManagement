@@ -9,12 +9,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name ="Banking-Bank-Service")
+@FeignClient(name ="Banking-Api-Gateway")
 public interface BankingCoreFeignClient {
-    @GetMapping(value="/api/account/bank-account/{account_number}")
+    @GetMapping(value="bank/api/account/bank-account/{account_number}")
     public BankAccount getBankAccount(@PathVariable("account_number") String accountNumber);
 
-    @PostMapping(value="/api/transaction/fund-transfer")
+    @GetMapping(value="bank/api/transaction/fund-transfer")
     public FundTransferResponse fundTransfer(@RequestBody FundTransferRequest fundTransferRequest);
     //  önemli bu method bize bir mesaj ve transactionId döndürecek
 

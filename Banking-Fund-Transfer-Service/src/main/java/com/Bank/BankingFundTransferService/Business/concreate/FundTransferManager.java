@@ -34,7 +34,6 @@ public class FundTransferManager implements FundTransferService {
     public FundTransferResponse fundTransfer(FundTransferRequest fundTransferRequest) {
         FundTransferEntity fundTransferEntity = this.modelMapperService.forRequest().map(fundTransferRequest,FundTransferEntity.class);
         fundTransferEntity.setStatus(TransactionStatus.PENDING);
-        fundTransferEntity.setTransactionReference(null);
         FundTransferEntity optFundTransfer = fundTransferRepository.save(fundTransferEntity);
 
         FundTransferResponse fundTransferResponse = bankingCoreFeignClient.fundTransfer(fundTransferRequest);

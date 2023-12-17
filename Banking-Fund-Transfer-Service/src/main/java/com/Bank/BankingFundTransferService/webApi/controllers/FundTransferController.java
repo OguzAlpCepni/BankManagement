@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/fund")
 @AllArgsConstructor
+
 public class FundTransferController {
     private FundTransferService fundTransferService;
 

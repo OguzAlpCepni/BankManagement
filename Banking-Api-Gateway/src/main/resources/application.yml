@@ -21,7 +21,7 @@ spring:
           predicates:
             - Path=/fund/**
           filters:
-
+            - StripPrefix=1
 server:
   port: 8082
 eureka:
