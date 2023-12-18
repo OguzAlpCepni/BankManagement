@@ -27,7 +27,7 @@ public class TransactionController {
         return transactionService.fundTransfer(fundTransferRequest);
 
     }
-    @PostMapping("/util-payment")
+    @PostMapping("/utilpayment")
     public UtilityPaymentResponse utilPayment(@RequestBody UtilityPaymentRequest utilityPaymentRequest) {
         return transactionService.utilPayment(utilityPaymentRequest);
 

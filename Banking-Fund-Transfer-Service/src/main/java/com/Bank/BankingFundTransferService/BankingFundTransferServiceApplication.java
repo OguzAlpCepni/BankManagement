@@ -19,10 +19,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.HashMap;
 
-@SpringBootApplication
+
 @RestControllerAdvice
 @EnableDiscoveryClient
 @EnableFeignClients
+@SpringBootApplication
 public class BankingFundTransferServiceApplication {
 
 	public static void main(String[] args) {

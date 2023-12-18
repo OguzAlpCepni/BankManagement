@@ -1,6 +1,8 @@
 package com.Bank.BankingUtilityPaymentService.business.DTO;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 

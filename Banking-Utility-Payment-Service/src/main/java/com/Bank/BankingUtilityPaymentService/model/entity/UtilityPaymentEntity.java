@@ -2,9 +2,7 @@ package com.Bank.BankingUtilityPaymentService.model.entity;
 
 import com.Bank.BankingUtilityPaymentService.model.enums.TransactionStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 @Entity
@@ -12,13 +10,15 @@ import java.math.BigDecimal;
 @Table(name="utility_payment")
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class UtilityPaymentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
     @Column(name="provider_id")
-    private long providerId;
+    private Long providerId;
     @Column(name="amount")
     private BigDecimal amount;
     @Column(name="reference_number")

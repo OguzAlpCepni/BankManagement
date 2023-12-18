@@ -65,7 +65,7 @@ public class TransactionnManager implements TransactionService {
         transactionRepository.save(TransactionEntity.builder().transactionType(TransactionType.UTILITY_PAYMENT)
                 .account(fromAccount)
                 .transactionId(transactionId)
-                .referenceNumber(utilityPaymentRequest.getReferanceNumber())
+                .referenceNumber(utilityPaymentRequest.getReferenceNumber())
                 .amount(utilityPaymentRequest.getAmount().negate()).build());
         // İşlem detayları içeren bir yanıt döndür
 

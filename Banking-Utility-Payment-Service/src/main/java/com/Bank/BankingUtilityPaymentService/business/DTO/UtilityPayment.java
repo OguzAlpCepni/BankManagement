@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class UtilityPayment {
     private Long providerId;
     private BigDecimal amount;

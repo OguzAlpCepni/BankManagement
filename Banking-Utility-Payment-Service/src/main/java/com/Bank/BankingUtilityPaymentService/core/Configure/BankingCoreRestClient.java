@@ -14,7 +14,7 @@ public interface BankingCoreRestClient {
     @GetMapping(value="bank/api/account/bank-account/{account_number}")
     AccountResponse getBankAccount(@PathVariable("account_number")String accountNumber);
 
-    @GetMapping (value="bank/api/transaction/util-payment")
+    @GetMapping (value="bank/api/transaction/utilpayment")
     UtilityPaymentResponse utilPayment(@RequestBody UtilityPaymentRequest utilityPaymentRequest);
 
 }

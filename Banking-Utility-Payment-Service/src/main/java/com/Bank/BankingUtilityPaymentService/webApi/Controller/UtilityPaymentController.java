@@ -5,10 +5,7 @@ import com.Bank.BankingUtilityPaymentService.business.DTO.UtilityPaymentRequest;
 import com.Bank.BankingUtilityPaymentService.business.DTO.UtilityPaymentResponse;
 import com.Bank.BankingUtilityPaymentService.business.abstracts.UtilityPaymentService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,7 +19,7 @@ public class UtilityPaymentController {
        return utilityPaymentService.readPayments();
     }
     @PostMapping()
-    public UtilityPaymentResponse utilPayment(UtilityPaymentRequest paymentRequest){
+    public UtilityPaymentResponse utilPayment(@RequestBody UtilityPaymentRequest paymentRequest){
         return utilityPaymentService.utilPayment(paymentRequest);
     }
 }
