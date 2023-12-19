@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(name="Banking-Bank-Service")
+@FeignClient(name="Banking-Api-Gateway")
 public interface BankingCoreRestClient {
 
-    @GetMapping(value = "/api/user/{identification}")
+    @GetMapping(value = "bank/api/user/{identification}")
     User readUser(@PathVariable("identification") String identification) ;
 
 }

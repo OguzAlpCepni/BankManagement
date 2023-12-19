@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name ="Banking-Api-Gateway")
+@FeignClient(name ="Banking-Api-Gateway",configuration = CustomFeignClientConfiguration.class)
 public interface BankingCoreFeignClient {
     @GetMapping(value="bank/api/account/bank-account/{account_number}")
     BankAccount getBankAccount(@PathVariable("account_number") String accountNumber);

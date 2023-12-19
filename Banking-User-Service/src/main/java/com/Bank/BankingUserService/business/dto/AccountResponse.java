@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 public class AccountResponse {
     private String number;
     private BigDecimal actualBalance;
-    private Integer id;
+    private long id;
     private String type;
     private String status;
     private BigDecimal availableBalance;

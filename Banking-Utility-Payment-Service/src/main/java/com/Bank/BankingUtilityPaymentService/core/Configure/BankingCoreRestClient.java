@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name="Banking-Api-Gateway")
+@FeignClient(name="Banking-Api-Gateway",configuration = CustomFeignClientConfiguration.class)
 public interface BankingCoreRestClient {
     @GetMapping(value="bank/api/account/bank-account/{account_number}")
     AccountResponse getBankAccount(@PathVariable("account_number")String accountNumber);
